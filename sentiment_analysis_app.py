@@ -12,11 +12,6 @@ st.set_page_config(page_title="Sentiment Analysis", page_icon="😊", layout="wi
 # Custom CSS for animations, cursor, and enhanced styling
 st.markdown("""
 <style>
-@keyframes gradientBG {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-}
 @keyframes fadeIn {
     from {opacity: 0; transform: scale(0.95);}
     to {opacity: 1; transform: scale(1);}
@@ -25,20 +20,26 @@ body {
     cursor: url('https://cdn.custom-cursor.com/cursors/animated-click-pointer.cur'), auto;
 }
 .stApp {
-    background: linear-gradient(-45deg, #1e3c72, #2a5298, #23d5ab, #23a6d5);
-    background-size: 400% 400%;
-    animation: gradientBG 10s ease infinite;
+    background-color: #121212; /* Fixed dark background */
     color: #ffffff;
     font-family: 'Arial', sans-serif;
 }
 .stTextInput>div>div>input, .stTextArea textarea {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #333;
     border-radius: 8px;
     font-size: 1rem;
-    color: #333;
+    color: #fff;
+    padding: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.stTextInput>div>div>input:focus, .stTextArea textarea:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #1e90ff;
+    outline: none;
 }
 .stButton button {
-    background: linear-gradient(to right, #1e3c72, #2a5298);
+    background-color:rgb(227, 43, 43);
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -49,7 +50,7 @@ body {
 }
 .stButton button:hover {
     transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(30, 60, 114, 0.6);
+    box-shadow: 0 4px 15px rgba(231, 46, 46, 0.6);
 }
 .sentiment-result {
     padding: 20px;
@@ -57,16 +58,20 @@ body {
     animation: fadeIn 0.8s ease-out;
     font-size: 1.2rem;
     color: #333;
+    background-color: #f0f0f0;
     text-align: center;
+    color: #121212; /* Dark text for contrast */
 }
 h2 {
     font-family: 'Georgia', serif;
+    color: #ffffff;
 }
 p {
     font-family: 'Verdana', sans-serif;
+    color: #bbbbbb;
 }
 .example-button button {
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background-color: #ff6347;
     color: #fff;
     border: none;
     padding: 8px 16px;
@@ -77,9 +82,10 @@ p {
 }
 .example-button button:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(255, 126, 95, 0.5);
+    box-shadow: 0 4px 10px rgba(255, 99, 71, 0.5);
 }
 </style>
+
 """, unsafe_allow_html=True)
 
 # Constants

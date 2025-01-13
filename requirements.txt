@@ -28,11 +28,11 @@ mdurl==0.1.2
 ml-dtypes==0.4.1
 namex==0.0.8
 narwhals==1.22.0
-numpy==2.0.2
+numpy>=1.19.2
 opt_einsum==3.4.0
 optree==0.13.1
 packaging==24.2
-pandas==2.2.3
+pandas>=1.2.0
 pillow==11.1.0
 protobuf==5.29.3
 pyarrow==18.1.0
@@ -48,10 +48,11 @@ setuptools==75.8.0
 six==1.17.0
 smmap==5.0.2
 streamlit==1.41.1
+scikit-learn>=0.24.0
 tenacity==9.0.0
 tensorboard==2.18.0
 tensorboard-data-server==0.7.2
-tensorflow==2.15.0
+tensorflow>=2.10.0
 termcolor==2.5.0
 toml==0.10.2
 tornado==6.4.2
